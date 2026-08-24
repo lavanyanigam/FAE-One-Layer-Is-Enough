@@ -1,12 +1,10 @@
 # One Layer Is Enough: Adapting Pretrained Visual Encoders for Image Generation
 
-![Diagram comparing SD-VAE, VA-VAE, RAE, and FAE](images_blog/fae_compare.png)
+![Diagram comparing SD-VAE, VA-VAE, RAE, and FAE](images/fae_compare.png)
 
 Latent Diffusion Models made generation cheap by moving the heavy lifting into a small, compressed latent space instead of raw pixels. But a new question has taken over the field since: instead of training a VAE from scratch to build that latent space, why not just reuse a pretrained visual encoder like DINOv2 or SigLIP that already understands images extremely well?
 
 That sounds obvious. But it isn't. The features these encoders produce are built for understanding images, not generating them, and these two jobs pull in opposite directions.
-
-![Diagram showing the mismatch between understanding features and generation latents](images_blog/fae_mismatch.png)
 
 Before we start, these are a few terms we'll keep reusing:
 
@@ -25,7 +23,7 @@ So we're stuck: if we keep the pretrained features large and rich, then the diff
 
 ## Phase 1: Building the Components
 
-![Diagram of the FAE architecture](images_blog/fae_arch.png)
+![Diagram of the FAE architecture](images/fae_arch.png)
 
 Let's assume FAE is a just a machine. This "machine" has three components bolted onto a frozen, pretrained encoder that never gets touched during training.
 
@@ -57,7 +55,7 @@ With the latent space $z$ built and frozen, any generator can be trained directl
 
 ## Phase 2: How It All Runs Together
 
-![Diagram showing FAE training stages](images_blog/fae_stages.png)
+![Diagram showing FAE training stages](images/fae_stages.png)
 
 1. A frozen pretrained encoder (DINOv2, SigLIP, whichever) turns an image into a high-dimensional embedding $x$.
 2. The **single-attention encoder** compresses $x$ into a small latent $z$ (this is the only new trainable piece added to the frozen backbone).
