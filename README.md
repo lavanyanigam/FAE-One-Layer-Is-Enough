@@ -2,9 +2,7 @@
 
 <img src="images/fae_compare.png" alt="Diagram comparing SD-VAE, VA-VAE, RAE, and FAE" width="500">
 
-Latent Diffusion Models reduced generation costs by shifting computation from raw pixels into a compressed latent space. A central question in recent research is whether we can skip training VAEs from scratch and instead reuse pretrained encoders like DINOv2 or SigLIP that already possess rich visual representations.
-
-However, features optimized for understanding images differ fundamentally from those required to generate them:
+Latent Diffusion Models reduced generation costs by shifting computation from raw pixels into a compressed latent space. An important question in recent research is whether we can skip training VAEs from scratch and instead reuse pretrained encoders like DINOv2 or SigLIP that already possess rich visual representations. However, features optimized for understanding images differ fundamentally from those required to generate them.
 
 Before we start, these are a few terms we'll keep reusing:
 
