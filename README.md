@@ -25,7 +25,7 @@ So we're stuck: if we keep the pretrained features large and rich, then the diff
 
 <img src="images/fae_arch.png" alt="Diagram of the FAE architecture" width="200">
 
-Let's assume FAE is a just a machine. This "machine" has three components bolted onto a frozen, pretrained encoder that never gets touched during training.
+Let's assume FAE is just a machine. This "machine" has three components bolted onto a frozen, pretrained encoder that never gets touched during training.
 
 ### 1. The Single-Attention Encoder
 
